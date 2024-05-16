@@ -9,7 +9,8 @@ if __name__ == "__main__":
     with open('./dataset.json', 'r') as file:
             data = json.load(file)
             input = data['numbers']
-            main(input)
+            result = main(input)
+            print(result)
 
 # Test input
 #test_numbers = [1, 2, 3, 17, 21, 30, 77, 81, 95, 100, 130, 200, 252, 1000, 1110, 2045, 180000]
