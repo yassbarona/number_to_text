@@ -12,7 +12,4 @@ if __name__ == "__main__":
             result = main(input)
             print(result)
 
-# Test input
-#test_numbers = [1, 2, 3, 17, 21, 30, 77, 81, 95, 100, 130, 200, 252, 1000, 1110, 2045, 180000]
-#test_output = [number_to_french(num) for num in test_numbers]
-#print(test_output)
+
