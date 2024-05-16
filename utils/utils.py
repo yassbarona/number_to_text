@@ -1,6 +1,15 @@
 from utils.constants import *
 
-def thousands(n):
+def thousands(n: int) -> str:
+    """
+    Convert a number in the thousands range to its French text representation.
+
+    Args:
+        n (int): The number to convert.
+
+    Returns:
+        str: The French text representation of the number.
+    """
     thousand, remainder = divmod(n, 1000)
     if thousand == 1:
         thousand_text = "mille"
@@ -12,7 +21,16 @@ def thousands(n):
     else:
         return thousand_text + "-" + number_to_french(remainder)
 
-def hundreds(n):
+def hundreds(n: int) -> str:
+    """
+    Convert a number in the hundreds range to its French text representation.
+
+    Args:
+        n (int): The number to convert.
+
+    Returns:
+        str: The French text representation of the number.
+    """
     hundred, remainder = divmod(n, 100)
     if hundred == 1:
         hundred_text = "cent"
@@ -24,13 +42,31 @@ def hundreds(n):
     else:
         return hundred_text + "-" + number_to_french(remainder)
 
-def from_70_to_99(n):
+def from_70_to_99(n: int) -> str:
+    """
+    Convert a number in the range 70-99 to its French text representation.
+
+    Args:
+        n (int): The number to convert.
+
+    Returns:
+        str: The French text representation of the number.
+    """
     if n < 80:  # rule for 70 to 79 (60 + x)
         return "soixante-" + number_to_french(n - 60)
     else:  # rule for 80 to 99 (80 + x)
         return "quatre-vingt-" + number_to_french(n - 80)
 
-def below_70(n):
+def below_70(n: int) -> str:
+    """
+    Convert a number in the range 20-69 to its French text representation.
+
+    Args:
+        n (int): The number to convert.
+
+    Returns:
+        str: The French text representation of the number.
+    """
     ten, unit = divmod(n, 10)  # divmod gives me the result of the floor division and the remainder
     if unit == 1:
         return TENS[ten] + "-et-un"  # rule for tens finishing with 1
@@ -39,7 +75,16 @@ def below_70(n):
     else:
         return TENS[ten]  # uses the tens list to get the number
 
-def number_to_french(n):
+def number_to_french(n: int) -> str:
+    """
+    Convert a number to its French text representation.
+
+    Args:
+        n (int): The number to convert.
+
+    Returns:
+        str: The French text representation of the number.
+    """
     if n < 17:
         return UNITS[n]  # these are the units without any rule
     elif n < 20:
