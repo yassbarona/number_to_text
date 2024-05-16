@@ -115,4 +115,4 @@ Do the following:
 Here is an example: {0: 'zéro', 1: 'un', 2: 'deux'}"""
 
 ### Write Docstrings:
- """Write siple Docstrings for the funtions i previously shared"""
+ """Write siple Docstrings for the functions i previously shared"""
